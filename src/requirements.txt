@@ -1,0 +1,11 @@
+bitsandbytes
+transformers
+peft
+accelerate
+datasets
+scipy
+einops
+evaluate
+trl
+torch
+sentencepiece
