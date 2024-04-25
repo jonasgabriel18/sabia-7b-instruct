@@ -24,7 +24,8 @@ def create_prompt(row):
     return format_prompt_no_input(row) if row['input'] == "" else format_prompt_input(row)
 
 def add_eos_to_output(row):
-    return row['output'] + EOS_TOKEN
+    row['output'] += EOS_TOKEN
+    return row
 
 def prompt2id(row, tokenizer: LlamaTokenizer):
     row['input_ids'] = tokenizer(row['prompt'], padding="max_length",
