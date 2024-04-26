@@ -33,12 +33,8 @@ def prompt2id(row, tokenizer: LlamaTokenizer):
     
     return row
 
-def preprocess_dataset(dataset: Dataset):
-    print("Preprocessing dataset")
-
-    tokenizer = LlamaTokenizer.from_pretrained("maritaca-ai/sabia-7b")
-    tokenizer.add_special_tokens({"pad_token": "<PAD>"})
-    tokenizer.save_pretrained("../custom_tokenizer")
+def preprocess_dataset(dataset: Dataset, tokenizer: LlamaTokenizer):
+    #print("Preprocessing dataset")
 
     dataset = dataset.map(create_prompt)
     dataset = dataset.map(add_eos_to_output)
