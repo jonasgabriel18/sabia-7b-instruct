@@ -9,3 +9,4 @@ evaluate
 trl
 torch
 sentencepiece
+streamlit
